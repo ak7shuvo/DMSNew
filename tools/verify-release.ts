@@ -51,7 +51,7 @@ const bumped = (v: string): string => { const [a, b, c] = v.split('.').map(Numbe
 const versionB = bumped(version);
 
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'petra-release-'));
-const installDir = path.join(tmp, win ? 'PetraDMS installed' : 'app-installed');
+const installDir = path.join(tmp, win ? 'PetraDMS-installed' : 'app-installed');
 const sh = (cmd: string, args: string[]) => spawnSync(cmd, args, { stdio: 'inherit' });
 const killApp = () => { if (win) spawnSync('taskkill', ['/F', '/IM', 'PetraDMS.exe'], { stdio: 'ignore' }); };
 
